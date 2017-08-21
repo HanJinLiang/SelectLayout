@@ -203,6 +203,14 @@ float downX=0;
     }
 ```
 
+还有一点就是开头说的为什么用的是RelativeLayout，其实最开始我用的是LinearLayout。功能都已经实现了，但是后面发现动画的时候，左边的始终是在最下面一层，右边的始终在最上面一层，体验效果非常不好，没有循环的效果。经过仔细观察，问题是因为子View的ViewGroup的层级关系问题，问题来了，那怎么才可以更改子View的层级关系么。经过一番查询，view.bringToFront(),这个方法正是我们要找的。但是在LinearLayout中尝试了并没有效果，于是我就只能用RelativeLayout了，哈哈。要是有其他更好的方法请指教。
+
+```
+viewRight.bringToFront();
+viewCenter.bringToFront();
+viewLeft.bringToFront();
+```
+
 
 ## 说明
 这个Layout里面获取子View是根据子View的id获取的，所以务必将三个字View的Id分别设置为viewLeft、viewCenter、viewRight。好吧，我承认这是一个很操蛋的地方，如果不这样，那么就通过getChildAt()索引获取，那样也有一定的限制。有需要就自行修改吧。我只是做个笔记

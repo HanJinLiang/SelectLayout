@@ -179,10 +179,10 @@ public class SelectLayout extends RelativeLayout implements View.OnClickListener
             return;
         }
         if(i==1){//左边的
-            viewRight.bringToFront();
-            viewCenter.bringToFront();
-            viewLeft.bringToFront();
             if(currentSelect== CurrentSelect.center) {//左边到中间
+                viewRight.bringToFront();
+                viewCenter.bringToFront();
+                viewLeft.bringToFront();
                 //左边View平移 方大
                 ObjectAnimator animator1 = ObjectAnimator.ofFloat(viewLeft, "translationX", 0, mMinWidth/2+mMaxWidth/2+mSpaceWidth);
                 ObjectAnimator animator2 = ObjectAnimator.ofFloat(viewLeft, "scaleX", 1, 1+mScale);
