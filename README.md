@@ -1,7 +1,7 @@
 # SelectLayout
 SelectLayout一个选中放大的容器。
 # 先看看效果吧
-![这里写图片描述](http://img.blog.csdn.net/20170821143320191?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTEzNTY2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![这里写图片描述](https://github.com/HanJinLiang/SelectLayout/blob/master/GIF.gif)
  
 #整体思路
 从设计那里得知要这么一个效果时候，第一反应就是用ViewPager或者画廊等去实现，也找了对应的资料，但是最终效果都不是很满意，给两个ViewPager实现类似效果的链接[仿土巴兔](http://blog.csdn.net/hanhailong726188/article/details/48780329) 和[ViewPagerCards](https://github.com/rubensousa/ViewPagerCards)。
@@ -97,7 +97,7 @@ SelectLayout一个选中放大的容器。
 
 ##动画实现基本效果
  其实动画很简单，这里面主要用到了属性动画，完成平移以及缩放。先来分析从最初的状态，点击左边时候的整个过程：
- ![这里写图片描述](http://img.blog.csdn.net/20170821153526433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTEzNTY2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+ ![这里写图片描述](https://github.com/HanJinLiang/SelectLayout/blob/master/status.png)
  左是从左往右平移一个 左边View一半+间隔+放大后的View宽度的一半，然后放大mScale；
  中是从左往右平移一个 左边View一半+间隔+放大后的View宽度的一半，然后缩小mScale；
  又是从左往左平移一个 （左边View一半+间隔+放大后的View宽度的一半)*2；
